@@ -1,1 +1,57 @@
-hello
+<!DOCTYPE html>
+<html lang="en" class="van-doc-theme-light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no" />
+    <title></title>
+
+<!--      <script crossorigin="anonymous" src="https://52g26a2861.goho.co/page-spy/index.min.js"></script>-->
+
+<!--      <script> window.$pageSpy = new PageSpy(); </script>-->
+    <script src="conf.js"></script>
+<!--      <script src="https://cdn.bootcdn.net/ajax/libs/eruda/2.4.1/eruda.js"></script>-->
+<!--    <script>-->
+<!--        eruda.init();-->
+<!--    </script>-->
+    <script type="module" crossorigin src="./assets/index-2a2b11ee.js"></script>
+    <link rel="stylesheet" href="./assets/index-60e8d285.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    
+    
+    <script>
+      window.onload = function () {
+        document.addEventListener('touchstart', function (event) {
+          if (event.touches.length > 1) {
+            event.preventDefault();
+          }
+        });
+
+        var lastTouchEnd = 0;
+
+        document.addEventListener(
+          'touchend',
+          function (event) {
+            var now = new Date().getTime();
+            if (now - lastTouchEnd <= 300) {
+              event.preventDefault();
+            }
+
+            lastTouchEnd = now;
+          },
+          false,
+        );
+
+        document.addEventListener('gesturestart', function (event) {
+          event.preventDefault();
+        });
+      };
+    </script>
+  </body>
+</html>
